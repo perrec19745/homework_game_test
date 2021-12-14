@@ -1,0 +1,34 @@
+create database quiz2
+
+use quiz2
+
+create table questions (
+    questionId int auto_increment primary key,
+    text varchar(1000));
+
+create table answersOptions (
+    answerOptionId int auto_increment primary key,
+    text varchar(1000),
+    questionId int references questions(questionId),
+    isRight bit);
+
+insert into questions(text) values('Планеты солнечной системы');
+
+select * from questions;
+
+insert into answersoptions(text, questionId, isRight) values('jupiter', 1, true);
+insert into answersoptions(text, questionId, isRight) values('saturn', 1, false);
+insert into answersoptions(text, questionId, isRight) values('mars', 1, true);
+insert into answersoptions(text, questionId, isRight) values('sirius', 1, false);
+
+select * from answersoptions;
+
+
+update answersoptions set text = 'jelezyaka' where answerOptionId = 2;
+
+select q.text, o.text
+from questions as q
+inner join answersOptions o on q.questionId = o.questionId
+
+delete from answersoptions
+where answerOptionId = 2
