@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="javascripts/app.js"></script>
+    <title>Homework Table</title>
+</head>
+<tbody>
+<h1>Домашняя работа по созданию таблицы</h1>
+<h2>Форма добавления данных в таблицу</h2>
+<br>
+<div>
+    <p>
+        <label for="fullname">Введите полное имя</label>
+        <input type="text" id="fullname" name="fullname"/>
+    </p>
+    <br>
+    <p>
+    <label for="gender">Выберите пол</label>
+    <select id="gender" size="2">
+        <ol>
+        <option><li value="мужской">мужской</li></option>
+            <option><li value="женский">женский</li></option>
+        </ol>
+    </select>
+    </p>
+    <p>
+        <label for="birthday">Дата рождения</label>
+        <input type="date" id="birthday" name="date"/>
+    </p>
+    <p>
+    <input type="button" onclick="addStudent()" value="Добавить данные"/>
+</p>
+</div>
+<br>
+<h2>Таблица с результатами</h2>
+<br>
+<table id="students">
+
+    <thead>
+    <tr>
+        <th>Имя студента</th>
+        <th>Пол</th>
+        <th>Дата рождения</th>
+        <th>Возраст</th>
+    </tr>
+    </thead>
+<tbody id="students-body">
+    <tr>
+        <td></td><td></td><td></td><td></td>
+    </tr>
+    </tbody>
+<tfoot id="middle-age">
+<tr>
+    <td colspan="3">Средний возраст студентов</td>
+    <td id="avg-age"></td>
+</tr>
+
+</tfoot>
+</table>
+
+</body>
+    </html>
